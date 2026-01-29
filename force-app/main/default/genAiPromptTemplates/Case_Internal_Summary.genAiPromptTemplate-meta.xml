@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>0BdiM2ctdEtgWfHF/y1crSf8sdksvUv/ZGHrwIX6lIA=_1</activeVersionIdentifier>
+    <description>This template is used to summarize case details for internal users referencing case subject, description, and status.</description>
+    <developerName>Case_Internal_Summary</developerName>
+    <masterLabel>Case Internal Summary</masterLabel>
+    <relatedEntity>Case</relatedEntity>
+    <relatedField>Case.Internal_Summary__c</relatedField>
+    <templateVersions>
+        <content>You are a support agent writing an internal-only case summary.
+Use ONLY the information provided in the following fields:
+
+Subject: {!$Input:Case.Subject}
+Description: {!$Input:Case.Description}
+Status: {!$Input:Case.Status}
+
+Do NOT infer, assume, or add any details beyond what is explicitly stated in these fields.
+
+Generate the response in the EXACT format below.
+Do not add or remove sections.
+Always include one blank line after each section.
+
+Output format (exactly):
+&lt;Strong&gt;Summary&lt;/Strong&gt;: &lt;1–2 sentences&gt;
+&lt;Strong&gt;Status&lt;/Strong&gt;: &lt;status&gt;
+&lt;Strong&gt;Key Details&lt;/Strong&gt;:
+&lt;bullet 1&gt;
+&lt;bullet 2&gt;
+
+
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://Case</definition>
+            <referenceName>Input:Case</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>0BdiM2ctdEtgWfHF/y1crSf8sdksvUv/ZGHrwIX6lIA=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__fieldCompletion</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

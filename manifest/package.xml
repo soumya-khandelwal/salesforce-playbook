@@ -5,12 +5,8 @@
         <name>GenAiPromptTemplate</name>
     </types>
     <types>
-        <members>Case_Record_Page</members>
-        <name>FlexiPage</name>
-    </types>
-    <types>
-        <members>Case.Internal_Summary__c</members>
-        <name>CustomField</name>
+        <members>Get_Case_Comments</members>
+        <name>Flow</name>
     </types>
     <version>65.0</version>
 </Package>
